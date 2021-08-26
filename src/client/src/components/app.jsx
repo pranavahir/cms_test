@@ -12,6 +12,7 @@ const client = new ApolloClient({
     }),
     cache:new InMemoryCache()
 })
+
 export class App extends Component {
     constructor(props){
         super(props);
@@ -31,8 +32,10 @@ export class App extends Component {
     }
     render() {
         return (
-            <ApolloProvider client={client}>
+            
             <div>
+                <ApolloProvider client={client}>
+                
                 <div className="page-wrapper" >
                     <Header />
                     <div className="page-body-wrapper">
@@ -45,11 +48,13 @@ export class App extends Component {
                     </div>
                 </div>
                 <div className="btn-light custom-theme" onClick={ () => this.ChangeRtl(this.state.divName)}>{this.state.divName}</div>
-            </div>
-            <Tabset_post/>
+                
             </ApolloProvider>
+            </div>
+            
         )
     }
 }
+
 
 export default App

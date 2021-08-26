@@ -65,7 +65,7 @@ export class Tabset_post extends Component {
     }
 }
 */
-export function Tabset_post(){
+export default function Tabset_post(){
     const [postalt, setPostalt] = useState("")
     const [keyword, setKeyword] = useState("")
     const [image, setImage] = useState()
@@ -124,37 +124,37 @@ export function Tabset_post(){
                     <h4>Post Details</h4>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> Postalt</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom0" type="text" required="" 
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom0" type="text" required={true} 
                          onChange={postaltChangeHandler} />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> Keyword</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom1" type="text" required=""
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom1" type="text" required={true}
                          onChange={keywordChangeHandler} />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> Image</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom2" type="file" required="" 
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom2" type="file" required={true} 
                           onChange={imageChangeHandler} />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> From Date</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom3" type="date" required=""
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom3" type="date" required={true}
                          onChange={fromDateChangeHandler} />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> To Date</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="date" required="" 
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="date" required={true} 
                          onChange={toDateChangeHandler} />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> Place</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="text" required=""
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="text" required={true}
                          onChange={placeChangeHandler}  />
                     </div>
                     <div className="form-group row">
                         <label className="col-xl-3 col-md-4"><span>*</span> Country</label>
-                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="text" required="" 
+                        <input className="form-control col-xl-8 col-md-7" id="validationCustom4" type="text" required={true} 
                          onChange={countryChangeHandler}/>
                     </div>
                     <div className="pull-left">
@@ -169,4 +169,3 @@ export function Tabset_post(){
             </Fragment>
     )
 }
-export default Tabset_post
