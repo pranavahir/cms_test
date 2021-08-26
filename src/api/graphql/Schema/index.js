@@ -14,7 +14,7 @@ type Post{
 input PostInput{
   postalt:String
   keyword:String
-  image:Upload
+  image:String
   fromDate:String
   toDate:String
   place:String
@@ -25,7 +25,8 @@ type File{
 }
 type Mutation {
   #imageUploader(file: Upload!,data:String):String
-  imageUploader(postInput:PostInput):Post
+  #imageUploader(postInput:PostInput):Post
+  imageUploader(postalt:String,keyword:String,image:Upload!,fromDate:String,toDate:String,place:String,country:String):Post
 }
 
 type Query {

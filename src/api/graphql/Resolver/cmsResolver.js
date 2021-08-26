@@ -4,7 +4,8 @@ const Post = require("../../../models/Post");
 module.exports = {
   imageUploader: async (args) => {
     try {
-      let { filename, createReadStream } = await args.postInput.image;
+      
+      let { filename, createReadStream } = await args.image;
       let stream = createReadStream();
       let { ext, name } = parse(filename);
       name = name.replace(/([^a-z0-9 ]+)/gi, "-").replace(" ", "_");
@@ -15,16 +16,16 @@ module.exports = {
       serverFile = serverFile.replace(" ", "_");
       let writeStream = await createWriteStream(serverFile);
       await stream.pipe(writeStream);
-      // const url = `http://localhost:4000${serverFile.split('uploads')[1]}`
-      serverFile = `http://localhost:4000${serverFile.split("uploads")[1]}`;
+      serverFile = `http://localhost:5000${serverFile.split("uploads")[1]}`;
+        
       const createpost = new Post({
-        postalt: args.postInput.postalt,
-        keyword: args.postInput.keyword,
+        keyword: args.keyword,
+        postalt: args.postalt,
         image: serverFile,
-        fromDate: args.postInput.fromDate,
-        toDate: args.postInput.toDate,
-        place: args.postInput.place,
-        country: args.postInput.country,
+        fromDate: args.fromDate,
+        toDate: args.toDate,
+        place: args.place,
+        country: args.country,
       });
       const postupload = await createpost.save();
       if (postupload) {
