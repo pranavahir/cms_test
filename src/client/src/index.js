@@ -40,6 +40,7 @@ import Create_menu from './components/menus/create-menu';
 import List_user from './components/users/list-user';
 import Create_user from './components/users/create-user';
 import Create_post from './components/posts/create-post';
+import Create_Product from './components/product/create-product';
 // import List_post from './components/posts/list-post';
 import Create_ad from './components/ads/create-ad';
 // import Listad from './components/ads/list-ad';
@@ -99,6 +100,7 @@ class Root extends Component {
                             {/* <Route path={`${process.env.PUBLIC_URL}/posts/list-post`} component={List_post} /> */}
                             <Route path={`${process.env.PUBLIC_URL}/posts/create-post`} component={Create_post} />
 
+                            <Route path={`${process.env.PUBLIC_URL}/product/create-product`} component={Create_Product} />
                             <Route path={`${process.env.PUBLIC_URL}/ads/create-ad`} component={Create_ad} />
                             {/* <Route path={`${process.env.PUBLIC_URL}/ads/list-ad`} component={Listad} /> */}
 

@@ -63,32 +63,33 @@ export class Datatable extends Component {
     render() {
         const { pageSize, myClass, multiSelectOption, pagination } = this.props;
         const { myData } = this.state
-
+        
         const columns = [];
+        
         for (var key in myData[0]) {
 
-            let editable = this.renderEditable
-            if (key === "image") {
-                editable = null;
-            }
-            if (key === "status") {
-                editable = null;
-            }
-            if (key === "avtar") {
-                editable = null;
-            }
-            if (key === "vendor") {
-                editable = null;
-            }
-            if(key === "order_status"){
-                editable = null;
-            }
+            // let editable = this.renderEditable
+            // if (key === "image") {
+            //     editable = null;
+            // }
+            // if (key === "status") {
+            //     editable = null;
+            // }
+            // if (key === "avtar") {
+            //     editable = null;
+            // }
+            // if (key === "vendor") {
+            //     editable = null;
+            // }
+            // if(key === "order_status"){
+            //     editable = null;
+            // }
 
             columns.push(
                 {
                     Header: <b>{this.Capitalize(key.toString())}</b>,
                     accessor: key,
-                    Cell: editable,
+                    // Cell: editable,
                     style: {
                         textAlign: 'center'
                     }
@@ -155,17 +156,30 @@ export class Datatable extends Component {
             }
         )
         }
-
+        
         return (
             <Fragment>
+                <div>
+             
+            </div>
                 <ReactTable
                     data={myData}
                     columns={columns}
-                    defaultPageSize={pageSize}
+                    // row={columns}
+                    // defaultPageSize={pageSize}
                     className={myClass}
-                    showPagination={pagination}
+                    // showPagination={pagination}
+                    // getTdProps={(state, rowInfo, column) => ({
+                    //     style: {
+                    //       height: '100px',
+                    //     },
+                    // })}
+                    pageSize={2}
+                    width="100px"
                 />
+                
                 <ToastContainer />
+                
             </Fragment>
         )
     }

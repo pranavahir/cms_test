@@ -1,6 +1,6 @@
 import React, { Component, Fragment, useState } from "react";
 import { Tabs, TabList, TabPanel, Tab } from "react-tabs";
-import { useMutation, gql } from "@apollo/client";//
+import { useMutation, gql } from "@apollo/client";
 const IMAGE_UPLOADER = gql`
   mutation (
     $country: String
@@ -30,7 +30,7 @@ const IMAGE_UPLOADER = gql`
     }
   }
 `;
-export default function Tabset_post() {
+export default function Single_Product() {
   const [postalt, setPostalt] = useState("");
   const [keyword, setKeyword] = useState("");
   const [image, setImage] = useState();

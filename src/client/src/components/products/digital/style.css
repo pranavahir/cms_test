@@ -1,0 +1,30 @@
+
+
+/* .button {
+    width: 83%;
+    margin-right: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height:625px;
+    overflow:auto;
+    position: absolute;
+    left:100;
+    right:    0;
+    bottom:   0;
+} */
+.input, .label {
+    display:block;
+     float:left;
+    margin:1px;
+
+}
+.group{
+    display: inline-block;
+    }
+.button{
+    background-color:#f44336;
+    position: fixed;
+    bottom: 600px;
+    margin-left: -15%;
+    color:white;
+}    
