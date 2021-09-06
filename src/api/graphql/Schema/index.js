@@ -175,15 +175,104 @@ type Variants {
   overrideprice:Int
 
    }
+
+   type orderdetail{
+    orderreferencenumber:String
+    orderdate:String
+    asin:String
+    productsku:String
+    producttitle:String
+    customerid:String
+    customername:String
+    paymentmethod:String
+    paymentdate:String
+    trackingnumber:String
+    orderstatus:String
+    address1:String
+    address2:String
+    city:String
+    state:String
+    country:String
+    phone:String
+    emailid:String
+    gst:String
+    productimage:String
+  }
+   
+  type abandetail{
+    productsku:String
+    producttitle:String
+    customerid:String
+    customername:String
+    paymentmethod:String
+    paymentdate:String
+    trackingnumber:String
+    orderstatus:String
+    address1:String
+    address2:String
+    city:String
+    state:String
+    country:String
+    phone:String
+    emailid:String
+    productimage:String
+  }
+   
+  type customerdetail{
+    customerid:String
+    customername:String
+    phonenumber:String
+    address1:String
+    address2:String
+    city:String
+    state:String
+    country:String
+    emailid:String
+    googleid:String
+    facebookid:String
+  }
+  
+  type cartdetail{
+    seqid:String	
+    userid:String	
+    isactive:String	
+    quantity:String	
+  }
+  
+  type wishlistdetail{
+  title:String
+  customerid:String
+  description:String
+  asin:String
+  sku:String
+  brand:String
+  category:String
+  large_image:String
+  additional_image_1:String
+  additional_image_2:String
+  additional_image_3:String
+  additional_image_4:String
+  additional_image_5:String
+  }
+
 type Mutation {
   imageUploader(postalt:String,keyword:String,image:Upload!,fromDate:String,toDate:String,place:String,country:String):Post
   updateOverRidePrice(sku:String!,overrideprice:Int):Boolean
   updatePrice(sku:String!,price:Int):Boolean
   updateQuantity(sku:String!,quantity:Int):Boolean
   updatepricequantity(sku:String!,quantity:Int,price:Int):Boolean
+  addcart(seqid:String,userid:String,isactive:String,quantity:String):cartdetail
+  addwishlist(title:String,customerid:String,description:String,asin:String,sku:String,
+    brand:String,category:String,large_image:String,additional_image_1:String,additional_image_2:String,
+    additional_image_3:String,additional_image_4:String,additional_image_5:String):wishlistdetail
 }
 
 type Query {
   product(asin: String!,country:String!,panel:String!): ProductMasterDetails
+  Getlist:[ orderdetail]
+  Getabanlist:[ abandetail]
+  Getcustomerlist:[ customerdetail]
+  Getcartlist:[ cartdetail]
+  Getwishlist:[ wishlistdetail]
 }     
 `

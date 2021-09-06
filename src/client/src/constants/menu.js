@@ -60,6 +60,27 @@ export const MENUITEMS = [
     {
         title: 'Media', path: '/media', icon: Camera, type: 'link', active: false
     },
+
+    {
+        title: 'abandonedcarts', icon: AlignLeft, type: 'sub', active: false, children: [
+            { path: '/abandonedcarts/abandonedcarts', title: 'Abandonedcarts list', type: 'link' }
+        ]
+    },
+    {
+        title: 'carts', icon: AlignLeft, type: 'sub', active: false, children: [
+            { path: '/carts/carts', title: 'carts list', type: 'link' }
+        ]
+    },
+    {
+        title: 'wishlist', icon: AlignLeft, type: 'sub', active: false, children: [
+            { path: '/wishlist/wishlist', title: 'wishlist', type: 'link' }
+        ]
+    },
+    {
+        title: 'Customer', icon: AlignLeft, type: 'sub', active: false, children: [
+            { path: '/Customer/customerinfo', title: 'Customer info', type: 'link' }
+        ]
+    },
     {
         title: 'Ads', icon: AlignLeft, type: 'sub', active: false, children: [
             { path: '/ads/create-ad', title: 'Create Ad', type: 'link' },
