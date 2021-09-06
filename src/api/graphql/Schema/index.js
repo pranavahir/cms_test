@@ -178,6 +178,9 @@ type Variants {
 type Mutation {
   imageUploader(postalt:String,keyword:String,image:Upload!,fromDate:String,toDate:String,place:String,country:String):Post
   updateOverRidePrice(sku:String!,overrideprice:Int):Boolean
+  updatePrice(sku:String!,price:Int):Boolean
+  updateQuantity(sku:String!,quantity:Int):Boolean
+  updatepricequantity(sku:String!,quantity:Int,price:Int):Boolean
 }
 
 type Query {

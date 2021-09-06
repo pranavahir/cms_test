@@ -11,6 +11,9 @@ module.exports = {
   },
   Mutation: {
     imageUploader:(_, args) => CmsResolver.imageUploader(args),
-    updateOverRidePrice:(_,args) => ProductResolver.updateOverRidePrice(args)
+    updateOverRidePrice:(_,args) => ProductResolver.updateOverRidePrice(args),
+    updatePrice:(_,args) => ProductResolver.updatePrice(args),
+    updateQuantity:(_,args) => ProductResolver.updateQuantity(args),
+    updatepricequantity:(_,args) => ProductResolver.updatepricequantity(args)
   },
 };

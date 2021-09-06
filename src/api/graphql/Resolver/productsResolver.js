@@ -158,5 +158,47 @@ module.exports = {
         catch(error){
             throw error
         }
+  },
+  updatePrice:async(args) => {
+    try{
+        const price = await Price.findOneAndUpdate({sku:args.sku},{$set:{price:args.price}})
+        if(price){
+          return true
+        }
+        else{
+          throw new Error("Product Not Found")
+        }
+    }
+    catch(error){
+        throw error
+    }
+},
+updateQuantity:async(args) => {
+  try{
+      const quantity = await Price.findOneAndUpdate({sku:args.sku},{$set:{quantity:args.quantity}})
+      if(quantity){
+        return true
+      }
+      else{
+        throw new Error("Product Not Found")
+      }
   }
+  catch(error){
+      throw error
+  }
+},
+updatepricequantity:async(args) => {
+  try{
+      const pricequantity = await Price.findOneAndUpdate({sku:args.sku},{$set:{quantity:args.quantity,price:args.price}})
+      if(pricequantity){
+        return true
+      }
+      else{
+        throw new Error("Product Not Found")
+      }
+  }
+  catch(error){
+      throw error
+  }
+}
 };

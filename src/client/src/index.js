@@ -19,6 +19,7 @@ import Product_detail from './components/products/physical/product-detail';
 import Digital_category from './components/products/digital/digital-category';
 import Digital_sub_category from './components/products/digital/digital-sub-category';
 import Digital_pro_list from './components/products/digital/digital-pro-list';
+import Digital_update_price from './components/products/digital/digital-update-price';
 import Digital_add_pro from './components/products/digital/digital-add-pro';
 
 //Sales
@@ -78,8 +79,10 @@ class Root extends Component {
                             <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-category`} component={Digital_category} />
                             <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-sub-category`} component={Digital_sub_category} />
                             <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-product-list`} component={Digital_pro_list} />
+                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-update-price`} component={Digital_update_price} />
                             <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-add-product`} component={Digital_add_pro} />
-
+                            <Route path={`${process.env.PUBLIC_URL}/products/digital/digital-add-product`} component={Digital_add_pro} />
+                            
                             <Route path={`${process.env.PUBLIC_URL}/sales/orders`} component={Orders} />
                             <Route path={`${process.env.PUBLIC_URL}/sales/transactions`} component={Transactions_sales} />
 
